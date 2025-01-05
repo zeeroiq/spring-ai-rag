@@ -12,3 +12,19 @@ Content-Type: application/json
 {
   "question": "What do you know about movie Avengers: Endgame ?"
 }
+
+###
+POST http://localhost:8090/ask
+Content-Type: application/json
+
+{
+  "question": "What do you know about movie Avengers: Endgame and what was the revenue ?"
+}
+
+###
+POST http://localhost:8090/ask
+Content-Type: application/json
+
+{
+  "question": "What do you know about movie Spider Man ?"
+}
