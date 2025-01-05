@@ -1,0 +1,16 @@
+spring:
+  application:
+    name: spring-ai-rag
+# api key
+  ai:
+    mistralai:
+      api-key: ${MISTRAL_API_KEY}
+
+
+server:
+  port: 8090
+
+
+ai:
+  app:
+    vectorStoreDir: /tmp/vector-store.json
