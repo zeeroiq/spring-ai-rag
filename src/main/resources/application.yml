@@ -3,8 +3,16 @@ spring:
     name: spring-ai-rag
 # api key
   ai:
+    retry:
+      backoff:
+        max-interval: 15
+        initial-interval: 1
+      max-attempts: 2
     mistralai:
       api-key: ${MISTRAL_API_KEY}
+      embedding:
+        options:
+          model: mistral-embed # default and only model supported by mistral-ai for now, while for openAI there are alternate models available as well
 
 
 server:
