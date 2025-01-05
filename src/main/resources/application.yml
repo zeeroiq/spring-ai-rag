@@ -14,3 +14,5 @@ server:
 ai:
   app:
     vectorStoreDir: /tmp/vector-store.json
+    document2load:
+      - classpath:/3-movies.csv
