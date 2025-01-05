@@ -27,7 +27,7 @@ public class MistralAIServiceImpl implements AIService {
     private final ChatModel chatModel;
     private final SimpleVectorStore vectorStore;
 
-    @Value("classpath:/templates/prompt-template-rag.st")
+    @Value("classpath:/templates/prompt-template-rag-meta.st")
     private Resource promptTemplateRag;
 
     @Override
@@ -36,7 +36,7 @@ public class MistralAIServiceImpl implements AIService {
         assert documents != null;
         List<String> contentList = documents.stream().map(Document::getText).toList();
         PromptTemplate promptTemplate = new PromptTemplate(promptTemplateRag);
-        Prompt prompt = promptTemplate.create(Map.of("input", question.question(), "document", String.join("\n", contentList)));
+        Prompt prompt = promptTemplate.create(Map.of("input", question.question(), "documents", String.join("\n", contentList)));
         contentList.forEach(log::info);
         ChatResponse response = chatModel.call(prompt);
         log.info("Response: {}", response.getResult().getOutput().getContent());
