@@ -1,0 +1,14 @@
+POST http://localhost:8090/ask
+Content-Type: application/json
+
+{
+  "question": "What is the capital of India ?"
+}
+
+###
+POST http://localhost:8090/ask
+Content-Type: application/json
+
+{
+  "question": "What do you know about movie Avengers: Endgame ?"
+}
